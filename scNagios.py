@@ -55,14 +55,12 @@ def parse_params():
     Returns:
         Two dictionaries, one with the options, one with the arguments
     """
-    usage = "%prong <arguments>"
-    description = 'Check hosts status per ipp'
+    usage = "scNagios -sHOSTNAME:PORT"
+    description = 'Check port status'
     parser = optparse.OptionParser(usage=usage, description=description)
 
-    parser.add_option('--host', '-s', action='store', type='string',
-                      help='host (hostname[:port])')
-    parser.add_option('--version', '-v', action='store_true', default=False,
-                      help='Show version')
+    parser.add_option('--hostname','-s', action='store', type='string', help='host (hostname[:port])')
+    parser.add_option('--version', '-v', action='store_true', default=False, help='Show version')
     (params, args) = parser.parse_args()
 
     if params.version:
