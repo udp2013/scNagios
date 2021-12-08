@@ -98,10 +98,7 @@ def main():
     connect_ipp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
         result = connect_ipp.connect_ex((hostname, port))
-        # print(result)
-        connect_ipp.close()
     except RuntimeError as e:
-        # print(e)
         sc_warning(e)
 
     connect_ipp.close()
@@ -111,13 +108,6 @@ def main():
     else:
         sc_critical("Port is not open")
 
-    sc_critical("EXIT")
-
-
-# Press the green button in the gutter to run the script.
-
 
 if __name__ == '__main__':
     main()
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
